@@ -77,8 +77,6 @@ export const App = () => {
       userId: userId,
       user: getUserById(userId),
     };
-    console.log('Current todos', todos)
-    console.log('new todo => ', newTodo);
 
     setTodos(currentTodo => [...currentTodo, newTodo]);
     handlerReset();
