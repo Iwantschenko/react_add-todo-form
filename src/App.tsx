@@ -14,6 +14,10 @@ function getUserById(userId: number): User | undefined {
 }
 
 function getNewId(todos: Todo[]) {
+  if (todos.length === 0) {
+    return 0;
+  }
+
   return Math.max(...todos.map(todo => todo.id)) + 1;
 }
 
@@ -85,6 +89,7 @@ export const App = () => {
       <form onSubmit={handlerSubmit} action="/api/todos" method="POST">
         <div className="field">
           <input
+            placeholder="input title"
             onChange={handlerInput}
             value={title}
             type="text"
