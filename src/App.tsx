@@ -5,7 +5,7 @@ import { TodoList } from './components/TodoList';
 import usersFromServer from './api/users';
 import todosFromServer from './api/todos';
 import { User } from './types/User';
-import { Todo } from './types/todos';
+import { Todo } from './types/Todo';
 
 const VALID_PATTERN_TITLE = /^[a-zA-Zа-яА-ЯїЇєЄіІґҐ0-9\s]+$/;
 
