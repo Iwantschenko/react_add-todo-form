@@ -18,7 +18,7 @@ function getNewId(todos: Todo[]) {
     return 0;
   }
 
-  return Math.max(...todos.map(todo => todo.id)) + 1;
+  return Math.max(0, ...todos.map(todo => todo.id)) + 1;
 }
 
 const todosWithUsers: Todo[] = todosFromServer.map(todo => ({
@@ -77,6 +77,8 @@ export const App = () => {
       userId: userId,
       user: getUserById(userId),
     };
+    console.log('Current todos', todos)
+    console.log('new todo => ', newTodo);
 
     setTodos(currentTodo => [...currentTodo, newTodo]);
     handlerReset();
